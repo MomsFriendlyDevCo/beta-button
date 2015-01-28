@@ -21,13 +21,25 @@
 	<link rel="stylesheet" href="/bower_components/fontawesome/css/font-awesome.min.css">
 
 	<!-- MFDC Beta bar -->
-	<link rel="stylesheet" href="dist/mfdc-beta.css"></script>
-	<script src="dist/mfdc-beta.js"></script>
+	<script src="beta-button.js"></script>
 </head>
 <body>
-
-<!-- Bootstrap dummy content {{{ -->
-
+<script>
+// Thumbnail lister - quick way of outputing all available icons
+$(function() {
+	$.each([
+		'basecamp.png', 'call.png', 'chat.png', 'cloud.png', 'config.png', 'dropbox.png', 'email.png', 'facebook.png', 'github.png', 'heart.png', 'icon.png', 'linkedin.png', 'mfdc.png', 'pin.png', 'skype.png', 'star.png', 'twitter.png', 'warning.png', 'wordpress.png', 
+	], function(i, file) {
+		$('#icons-list').append(
+			'<div class="col-md-2"><a class="thumbnail" href="img/' + file + '">' +
+				'<img width="64px" height="64px" src="img/' + file + '">' +
+				'<div class="caption text-center">' + file + '</div>' +
+			'</a></div>'
+		);
+	});
+});
+</script>
+	<!-- Bootstrap dummy nav bar {{{ -->
 	 <nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -52,8 +64,8 @@
 			</div><!--/.navbar-collapse -->
 		</div>
 	</nav>
+	<!-- }}} -->
 
-	<!-- Main jumbotron for a primary marketing message or call to action -->
 	<div class="jumbotron">
 		<div class="container">
 			<h1>MFDC Beta Button</h1>
@@ -63,39 +75,44 @@
 	</div>
 
 	<div class="container">
-		<!-- Example row of columns -->
 		<div class="row">
-			<div class="col-md-4">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-				<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+			<div class="col-md-6">
+				<h2>Basic usage</h2>
+				<p>To use the MFDC beta-button just include the code to the right somewhere in the header of your page.</p>
 			</div>
-			<div class="col-md-4">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-				<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-		 </div>
-			<div class="col-md-4">
-				<h2>Heading</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-				<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+			<div class="col-md-6">
+<pre>&lt;!-- MFDC Beta bar --&gt;
+&lt;script src="http://beta.mfdc.biz/beta-button.js"&gt;&lt;/script&gt;</pre>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Customized usage</h2>
+				<p>You can override the existing button set by specifying <code>&lt;ul id="mfdc-beta-buttons"&gt;</code> somewhere in your page body.</p>
+				<p>You will also need to include the main script in the header as above.</p>
+			</div>
+			<div class="col-md-6">
+<pre>&lt;ul id="mfdc-beta-buttons"&gt;
+	&lt;li class="item" data-tooltip="View MFDC Basecamp page"&gt;&lt;a href="https://mfdc.basecamphq.com"&gt;&lt;img src="/img/basecamp.png"/&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li class="item" data-tooltip="Visit the MFDC.biz site"&gt;&lt;a href="http://mfdc.biz"&gt;&lt;img src="/img/mfdc.png"/&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li class="item" data-tooltip="Contact us"&gt;&lt;a href="mailto:info@mfdc.biz"&gt;&lt;img src="/img/email.png"/&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li class="item" data-tooltip="MY CUSTOM BUTTON!"&gt;&lt;a href="http://twitter.com"&gt;&lt;img src="/img/twitter.png"/&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+			</div>
+		</div>
+	</div>
 
-		<hr>
-
-		<footer>
-			<p>&copy; Company 2014</p>
-		</footer>
-	</div> <!-- /container -->
-<!-- }}} -->
-
-<a id="mfdc-beta-button" href="#wheel"></a>
-<ul id="wheel">
-	<li class="item" data-tooltip="View MFDC Basecamp page"><a href="https://mfdc.basecamphq.com"><img src="img/basecamp.png"/></a></li>
-	<li class="item" data-tooltip="Visit the MFDC.biz site"><a href="http://mfdc.biz"><img src="img/mfdc.png"/></a></li>
-	<li class="item" data-tooltip="Contact us"><a href="mailto:info@mfdc.biz"><img src="img/email.png"/></a></li>
-</ul>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Included icons</h2>
+				<p>The following icons are included by default and can be used in a custom button list.</p>
+			</div>
+		</div>
+		<div class="row" id="icons-list">
+			<!-- This list will be automatically populated via JavaScript -->
+		</div>
+	</div>
 
 </body>
 </html>

@@ -1,3 +1,7 @@
+#mfdc-beta-buttons {
+	display: none;
+}
+
 #mfdc-beta-button {
 	display: block;
 	position: fixed;
