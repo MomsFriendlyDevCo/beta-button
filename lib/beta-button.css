@@ -2,6 +2,10 @@
 	display: none;
 }
 
+body.mfdc-beta-button-hide #mfdc-beta-button {
+	display: none !important;
+}
+
 #mfdc-beta-button {
 	display: block;
 	position: fixed;
