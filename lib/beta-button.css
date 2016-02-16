@@ -65,3 +65,20 @@ body.mfdc-beta-button-hide #mfdc-beta-button {
 .wheel li a:hover {
 	text-decoration: none;
 }
+
+
+/* Editor functionality {{{ */
+#bb-hover-area {
+	position: absolute;
+	border: 2px solid #AAA;
+	border-radius: 5px;
+	background: rgba(0,0,0,0.4);
+	cursor: pointer;
+}
+
+#bb-hover-area .btn {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+/* }}} */
